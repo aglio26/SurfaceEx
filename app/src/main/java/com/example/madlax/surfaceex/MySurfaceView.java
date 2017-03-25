@@ -18,14 +18,14 @@ import java.util.concurrent.TimeUnit;
  * Created by madlax on 2017/03/24.
  */
 
-public class MySurfaceView extends SurfaceView
+public class MySurfaceView extends SurfaceView //SurfaceViewクラスの継承
     implements SurfaceHolder.Callback { //Surfaceの実装部分 レイヤーの生成、更新、破棄を定義
 
-    private float drawX, drawY; //変数定義
-    private float targetX,targetY;
+    private float drawX, drawY; //フィールド変数定義
+    private float targetX,targetY; //フィールド変数定義
 
-    private void initial(){ // 初期化処理？？
-        SurfaceHolder holder = this.getHolder();
+    private void initial(){ //initialメソッドの定義
+        SurfaceHolder holder = this.getHolder(); //レイヤーの
         holder.addCallback(this);
         drawX = 50f;
         drawY = 50f;
@@ -59,8 +59,8 @@ public class MySurfaceView extends SurfaceView
 
 
     public MySurfaceView(Context context){ //コンストラクタ
-        super(context);
-        initial();
+        super(context);//継承元(SurfaceViewクラス)のコンストラクタ実行
+        initial();//ユーザー定義メソッドinitial()の実行
     }
 
     @Override
